@@ -1,0 +1,75 @@
+@import "./../../core/scss/variables.scss";
+h1 {
+  margin: 0;
+}
+
+.navigation {
+  font-family: $font;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 2fr 7fr 1fr;
+  gap: 2rem;
+  overflow: hidden;
+  // background-color: $primary;
+  color: $accent;
+
+  .navigation-header {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    padding-left: 20px;
+
+    h4 {
+      font-size: 15px;
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-size: 13px;
+        font-weight: $regular;
+        color: $grey;
+      }
+    }
+  }
+
+  .date {
+    font-size: $small;
+    padding-left: 3rem;
+  }
+  .nav-items {
+    align-self: flex-start;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    font-size: $small;
+
+    li {
+      margin: 0;
+      width: 100%;
+      padding: 10px 0;
+      display: flex;
+      flex-direction: row;
+      color: $grey;
+      a,
+      button {
+        text-decoration: none;
+        padding-left: 3rem;
+        transition: border-left 0.4s;
+        color: inherit;
+
+        &.active {
+          border-left: solid 3px $accent;
+          font-weight: $bold;
+          color: $accent;
+        }
+      }
+      button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
