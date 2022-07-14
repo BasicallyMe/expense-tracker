@@ -1,0 +1,76 @@
+@import './../../core/scss/variables.scss';
+.card {
+    font-family: $font;
+    padding: 14px 20px;
+    //height: 160px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 35px;
+    background-color: $color-2;
+    border-radius: 10px;
+    filter: drop-shadow(0.3rem 0.5rem 0.4rem rgba($color: $grey, $alpha: 0.6));
+
+    .card-top, .card-bottom {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        align-items: flex-end;
+        gap: 25px;
+        h4, h2 {
+            margin: unset;
+        }
+    }
+    .card-top {
+        .balance-info {
+            display: flex;
+            flex-direction: column;
+            align-self: flex-start;
+            gap: 10px;
+            h4 {
+                font-size: 13px;
+                font-weight: $regular;
+                color: $dark-grey;
+            }
+        }
+        .company {
+            align-self: flex-start;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 3px;
+            h4 {
+                position: relative;
+                right: 3px;
+                text-align: right;
+                margin: unset;
+                font-style: italic;
+                font-weight: $extra-bold;
+                font-size: 12px;
+                text-transform: uppercase;
+                color: $med-grey;
+            }
+        }
+    }
+    .card-bottom {
+        .card-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            h4 {
+                font-size: 13px;
+                font-weight: $medium;
+            }
+
+            .card-number {
+                font-weight: $regular;
+            }
+        }
+        .expiry-date {
+            align-self: flex-end;
+            text-align: right;
+            font-size: 12px;
+            font-weight: $medium;
+            color: $dark-grey;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+@import "./../../core/scss/variables.scss";
+
+.dashboard {
+  padding: 0 $padding;
+
+  section {
+    display: grid;
+  }
+  #section-1 {
+    grid-template-columns: 2fr 4fr;
+  }
+  .greet-text {
+    font-size: 20px;
+    font-weight: $semi-bold;
+    color: $darker-grey;
+  }
+
+  .div-heading {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    .tabs {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+    }
+    h3 {
+      font-size: 14px;
+      font-weight: $bold;
+      color: black;
+    }
+  }
+
+  .cards {
+    height: 24em;
+    width: fit-content;
+
+    .flicking-viewport {
+      max-height: 100%;
+      padding: 0 10px;
+
+      .flicking-camera {
+        gap: 20px;
+      }
+    }
+  }
+}

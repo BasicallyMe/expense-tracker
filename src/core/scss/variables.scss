@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Lato:wght@300;400;700&display=swap');
 //font and font-weights
-$font: Lato;
+$font: Inter;
 
 //font-weights
 $extra-light: 200;
@@ -9,6 +9,7 @@ $regular: 400;
 $medium: 500;
 $semi-bold: 600;
 $bold: 700;
+$extra-bold: 800;
 
 //font-sizes 
 $normal: 1rem;
@@ -21,3 +22,18 @@ $accent: #14213d;
 $primary: #fca311;
 $light-grey: #e5e5e5;
 $grey: #ced4da;
+$med-grey: #adb5bd;
+$dark-grey: #6c757d;
+$darker-grey: #495057;
+
+//card colors 
+$color-1: #FCD341;
+$color-2: #F2F2F2;
+$color-3: #D0EFB1;
+$color-4: #FF6666;
+$color-5: #0DAB76;
+$color-6: #F4F3EE;
+$color-7: #DAB785;
+
+//margins and paddings for components 
+$padding: 20px;
