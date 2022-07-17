@@ -1,12 +1,20 @@
 import React, { useRef } from "react";
 import Flicking from "@egjs/react-flicking";
 import "@egjs/react-flicking/dist/flicking.css";
-import { Card, useStore } from "./../";
+import { Card, Item, useStore } from "./../";
 import "./Dashboard.scss";
+import { useState } from "react";
 
 const Dashboard = () => {
   const flickingRef = useRef(null);
-  const { userData } = useStore();
+  const { userData, cards, expenses } = useStore();
+  const [tabIndex, setTabIndex] = useState(0);
+
+  function handleClick(index) {
+    console.info(index, "function call");
+    setTabIndex(index);
+  }
+
   return (
     <div className="dashboard">
       <h2 className="greet-text">
@@ -29,7 +37,7 @@ const Dashboard = () => {
               console.log(e);
             }}
           >
-            {userData.cards.map((card, index) => (
+            {cards.map((card, index) => (
               <Card
                 key={card.cardNumber}
                 data={card}
@@ -44,13 +52,36 @@ const Dashboard = () => {
             <h3>Recent Expenses</h3>
 
             <div className="tabs">
-              <button>Today</button>
-              <button>Weekly</button>
-              <button>Monthly</button>
+              <button
+                className={`tab ${tabIndex === 0 ? "active" : null}`}
+                onClick={() => handleClick(0)}
+              >
+                Today
+              </button>
+              <button
+                className={`tab ${tabIndex === 1 ? "active" : null}`}
+                onClick={() => handleClick(1)}
+              >
+                Weekly
+              </button>
+              <button
+                className={`tab ${tabIndex === 2 ? "active" : null}`}
+                onClick={() => handleClick(2)}
+              >
+                Monthly
+              </button>
             </div>
           </header>
           <div className="expenses-list">
-            
+            {expenses.length === 0 ? (
+              <h1>No expenses</h1>
+            ) : (
+              <ul>
+                {expenses.map((item, index) => (
+                  <Item data={item} />
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </section>

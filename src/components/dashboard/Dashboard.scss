@@ -5,43 +5,67 @@
 
   section {
     display: grid;
+    column-gap: 20px;
+    padding-right: 2rem;
   }
   #section-1 {
     grid-template-columns: 2fr 4fr;
-  }
-  .greet-text {
-    font-size: 20px;
-    font-weight: $semi-bold;
-    color: $darker-grey;
-  }
-
-  .div-heading {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-
-    .tabs {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 10px;
+    max-height: 60vh;
+    .greet-text {
+      font-size: 20px;
+      font-weight: $semi-bold;
+      color: $darker-grey;
     }
-    h3 {
-      font-size: 14px;
-      font-weight: $bold;
-      color: black;
+
+    .div-heading {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+
+      .tabs {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+      }
+      h3 {
+        font-size: 14px;
+        font-weight: $bold;
+        color: black;
+      }
     }
-  }
 
-  .cards {
-    height: 24em;
-    width: fit-content;
+    .cards {
+      max-height: inherit;
+      width: fit-content;
 
-    .flicking-viewport {
-      max-height: 100%;
-      padding: 0 10px;
+      .flicking-viewport {
+        max-height: inherit;
+        padding: 0 10px;
 
-      .flicking-camera {
-        gap: 20px;
+        .flicking-camera {
+          gap: 20px;
+        }
+      }
+    }
+    .recent-expenses {
+      .tabs {
+        .tab {
+          background-color: transparent;
+          border: none;
+          padding: 5px 10px;
+          border-radius: 7px;
+          color: $med-grey;
+          cursor: pointer;
+          transition: background-color 0.2s linear, color 0.2s linear;
+
+          &.active {
+            background-color: $primary;
+            color: white;
+          }
+        }
+      }
+      ul {
+        padding: 0;
       }
     }
   }

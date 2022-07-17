@@ -7,6 +7,7 @@ import {
   IconPayPal,
   IconDiscover
 } from "./";
+import { FiCreditCard, FiShoppingBag, FiShoppingCart } from "react-icons/fi";
 
 const Icon = ({ name }) => {
   switch (name) {
@@ -20,6 +21,12 @@ const Icon = ({ name }) => {
       return <IconPayPal />;
     case "Discover": 
       return <IconDiscover />;
+    case "Investments": 
+      return <FiCreditCard />;
+    case "Clothing": 
+      return <FiShoppingBag />;
+    case "Groceries": 
+      return <FiShoppingCart />;
     default:
       return null;
   }
